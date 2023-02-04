@@ -1,3 +1,5 @@
+# [Daikichi Path Variables](https://login.codingdojo.com/m/315/9532/64274)
+
 - [ ] Add 2 new routes with corresponding method definitions in your Daikichi Routes project that will accept path variables.
 
 - [ ] Have an http GET request to 'http://localhost:8080/daikichi/travel/kyoto' where the url will take any string for the city, and display text that says for example, 'Congratulations! You will soon travel to kyoto!'.
