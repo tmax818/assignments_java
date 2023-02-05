@@ -1,7 +1,7 @@
 # [First Java Program](https://login.codingdojo.com/m/315/9299/62834)
 
 
-- [ ] Create a new source file inside your Java Fundamentals assignments folder
+- [ ] Create a new source [file](src/Main.java) inside your Java Fundamentals assignments folder
 
 - [ ] In the main method, implement the code to print your name, age, and hometown on different lines.
 

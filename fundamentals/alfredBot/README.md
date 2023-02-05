@@ -9,7 +9,7 @@
 
 - [ ] Create an [AlfredTest.java](AlfredTest.java) main program file that will execute code to test our AlfredQuotes class.
 
-- [ ] Implement the `guestGreeting` method, and test it by first compiling the test file with the javac command and then running the test file with the java command in your terminal.
+- [ ] Implement the `guestGreeting` method, and test it by first compiling the test file with the `javac` command and then running the test file with the java command in your terminal.
 
 - [ ] Implement the `dateAnnouncement` method, and test it.
 
