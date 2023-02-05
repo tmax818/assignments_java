@@ -8,7 +8,7 @@ public class CafeJava {
         String pendingMessage = ", your order will be ready shortly";
         String readyMessage = ", your order is ready";
         String displayTotalMessage = "Your total is $";
-        
+    
         // Menu variables (add yours below)
         double mochaPrice = 3.5;
     
