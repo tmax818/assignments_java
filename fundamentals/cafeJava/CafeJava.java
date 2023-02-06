@@ -1,4 +1,4 @@
-package assignments.fundamentals.cafeJava;
+package assignments_java.fundamentals.cafeJava;
 
 public class CafeJava {
     public static void main(String[] args) {
