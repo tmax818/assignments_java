@@ -1,4 +1,4 @@
-package assignments_java.fundamentals.alfredBot;
+
 
 public class AlfredTest {
     /*
@@ -28,8 +28,8 @@ public class AlfredTest {
         System.out.println(testGreeting);
         
         // Uncomment these one at a time as you implement each method.
-        // System.out.println(testGuestGreeting);
-        // System.out.println(testDateAnnouncement);
+        //System.out.println(testGuestGreeting);
+        System.out.println(testDateAnnouncement);
         // System.out.println(alexisTest);
         // System.out.println(alfredTest);
         // System.out.println(notRelevantTest);

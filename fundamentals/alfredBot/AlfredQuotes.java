@@ -1,4 +1,3 @@
-package assignments_java.fundamentals.alfredBot;
 
 import java.util.Date;
 public class AlfredQuotes {
@@ -7,15 +6,20 @@ public class AlfredQuotes {
         // You do not need to code here, this is an example method
         return "Hello, lovely to see you. How are you?";
     }
-    
-    public String guestGreeting(String name) {
+    /**
+     * 	"Hello, Beth Kane. Lovely to see you."
+     * @param name
+     * @return
+     */
+    public String  guestGreeting(String name) {
         // YOUR CODE HERE
-        return "place holder for guest greeting return string";
+        double age = 42.0;
+        return String.format("Hello, %s. Lovely to see you %6s %-3f", name, name, age);
     }
     
     public String dateAnnouncement() {
-        // YOUR CODE HERE
-        return "place holder for date announcement return string";
+        Date date = new Date();
+        return "" + date;
     }
     
     public String respondBeforeAlexis(String conversation) {

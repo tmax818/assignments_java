@@ -2,7 +2,7 @@
 
 ## Checklist
 
-- [ ] Create a BankAccount class.
+- [ ] Create a [BankAccount](BankAccount.java) class.
 
 - [ ] The class should have the following attributes: (double) checking balance, (double) savings balance.
 
