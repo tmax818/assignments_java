@@ -21,6 +21,7 @@ public class BooksController {
     @GetMapping("/")
     public String index(Model model){
         List<Book> books = bookService.allBooks();
+        System.out.println(books);
         
         return "index.jsp";
     }
