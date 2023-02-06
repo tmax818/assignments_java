@@ -1,3 +1,5 @@
+package assignments_java.fundamentals.alfredBot;
+
 public class AlfredTest {
     /*
     * This main method will always be the launch point for a Java application

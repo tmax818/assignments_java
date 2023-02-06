@@ -1,44 +1,50 @@
+import java.util.ArrayList;
+
 public class CafeUtil {
 
 
 /**
 * TODO Implement the getStreakGoal method and test.
+* @param None
+@return streak goal
 */    
 public int getStreakGoal(){
     return 0;
 }
 
 /**
- // TODO Implement the printPriceChart method and test.
- * 
+ * TODO Implement the printPriceChart method and test.
+ * @param product
+ * @return null
  */
-void printPriceChart(String product, double price, int maxQuantity){
+public void printPriceChart(String product, double price, int maxQuantity){
 
 }
 
 
 /**
- // TODO Implement the getOrderTotal method and test.
- * 
+ * TODO Implement the getOrderTotal method and test.
+ * @param prices
+ * @return total
  */
-double getOrderTotal(double[] prices){
+public double getOrderTotal(double[] prices){
     return 0.0;
 }
 
 /**
- // TODO Implement the displayMenu method and test.
- * 
+ * TODO Implement the displayMenu method and test.
+ * @param menuItems 
  */
-void displayMenu(ArrayList<String> menuItems){
+public void displayMenu(ArrayList<String> menuItems){
 
 }
 
 
 /**
- // TODO Implement the addCustomer method and test. 
- * 
+ * TODO Implement the addCustomer method and test. 
+ * @param customers
  */
-void addCustomer(ArrayList<String> customers){
+public void addCustomer(ArrayList<String> customers){
     
 }
  
