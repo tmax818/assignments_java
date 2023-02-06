@@ -46,7 +46,7 @@
 ### Spring MVC
 
 - [ ] [Books API](spring/springMVC/booksapi/README.md)
-- [ ] [Rendering Books]()
+- [ ] [Rendering Books](spring/springMVC/renderingbooks/README.md)
 - [ ] [All Books]()
 - [ ] [Burger Tracker 1]()
 - [ ] [Burger Tracker 2]()

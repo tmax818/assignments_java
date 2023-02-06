@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tyler</groupId>
-	<artifactId>renderingbooks</artifactId>
+	<artifactId>allbooks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>renderingbooks</name>
+	<name>allbooks</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -79,6 +79,7 @@
 			<artifactId>jquery</artifactId>
 			<version>3.6.0</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>
