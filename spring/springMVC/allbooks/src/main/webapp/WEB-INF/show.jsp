@@ -24,7 +24,7 @@
         <p>Description: <c:out value="${book.description}"></c:out></p>
         <p>Language: <c:out value="${book.language}"></c:out></p>
         <p>Number of Pages: <c:out value="${book.numberOfPages}"></c:out></p>
-
+        <a href="/">home</a>
     </div>
 </body>
 </html>

@@ -47,7 +47,7 @@
 
 - [ ] [Books API](spring/springMVC/booksapi/README.md)
 - [ ] [Rendering Books](spring/springMVC/renderingbooks/README.md)
-- [ ] [All Books]()
+- [ ] [All Books](spring/springMVC/allbooks/README.md)
 - [ ] [Burger Tracker 1]()
 - [ ] [Burger Tracker 2]()
 - [ ] [Save Travels]()

@@ -22,6 +22,7 @@ public class BooksController {
     public String index(Model model){
         List<Book> books = bookService.allBooks();
         System.out.println(books);
+        model.addAttribute("books", books);
         
         return "index.jsp";
     }

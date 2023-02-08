@@ -9,3 +9,5 @@
 - [ ] Build a JSTL forEach loop to render each row of the table with the information about a book.
 
 - [ ] Ninja Bonus: Make each title a link that navigates to the details page for that particular book.
+
+- [JSTL loops and you](https://login.codingdojo.com/m/315/9532/64288)

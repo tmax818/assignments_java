@@ -20,10 +20,28 @@
 </head>
 <body>
     <div class="container">
-        <h1><c:out value="${book.title}"/></h1>
-        <p>Description: <c:out value="${book.description}"></c:out></p>
-        <p>Language: <c:out value="${book.language}"></c:out></p>
-        <p>Number of Pages: <c:out value="${book.numberOfPages}"></c:out></p>
+        <h1>All Books</h1>
+        <table class="table">
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Language</th>
+                <th>pages</th>
+            </thead>
+            <tbody>
+                <c:forEach var="book" items="${books}">
+                    <tr>
+                        <td>${book.id}</td>
+                        <td>
+                            <a href="books/${book.id}">${book.title}</a>
+                        </td>
+                        <td>${book.language}</td>
+                        <td>${book.numberOfPages}</td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+
 
     </div>
 </body>
