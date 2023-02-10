@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/daikichi")
 public class Controller {
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String index(){
-        return "Welcome!";
+        return "<h1>Welcome!</h1><p><a href=\"/\">home</a></p>";
     }
 
     @RequestMapping("/today")
     public String today(){
-        return "Today you will find luck in all your endeavors!";
+        return "Today you will find luck in all your endeavors!<p><a href=\"/\">home</a></p>";
     }
 
     @RequestMapping("/tomorrow")
     public String tomorrow(){
-        return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!";
+        return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas!<p><a href=\"/\">home</a></p>";
     }
     
 }
