@@ -24,7 +24,8 @@
 
         <h2>Update a Burger</h2>
 
-        <form:form action="/burgers" method="post" modelAttribute="burger">
+        <form:form action="/burgers/${burger.id}" method="post" modelAttribute="burger">
+            <input type="hidden" name="_method" value="put">
             <div class="form-control">
                 <form:label path="name">name</form:label>
                 <form:errors path="name"/>

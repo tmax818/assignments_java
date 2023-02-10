@@ -48,8 +48,8 @@
 - [ ] [Books API](spring/springMVC/booksapi/README.md)
 - [ ] [Rendering Books](spring/springMVC/renderingbooks/README.md)
 - [ ] [All Books](spring/springMVC/allbooks/README.md)
-- [ ] [Burger Tracker 1]()
-- [ ] [Burger Tracker 2]()
+- [ ] [Burger Tracker 1](spring/springMVC/burgertrackerone/README.md)
+- [ ] [Burger Tracker 2](spring/springMVC/burgertrackertwo/README.md)
 - [ ] [Save Travels]()
 
 ### Adding One-to-Many

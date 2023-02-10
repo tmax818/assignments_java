@@ -62,6 +62,7 @@ public class BurgerController {
         if(result.hasErrors()){
             return "edit.jsp";
         } else {
+            burgerService.updateBurger(burger);
             return "redirect:/";
         }
     }
