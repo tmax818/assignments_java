@@ -29,6 +29,8 @@ public class Physician extends User implements HIPAACompliantAdmin {
     }
 
     public boolean assignPin(int i) {
+        int numDigits = String.valueOf(i).length();
+        System.out.println(numDigits >= 4);
         return false;
     }
 

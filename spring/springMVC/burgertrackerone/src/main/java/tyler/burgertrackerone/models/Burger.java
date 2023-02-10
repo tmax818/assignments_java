@@ -9,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -27,6 +25,10 @@ public class Burger {
     @NotNull
     @Size(min = 2, max=20)
     private String name;
+
+    @NotNull
+    @Size(min = 2, max=20)
+    private String restaurant;
     
     @NotNull
     private Integer rating;
@@ -48,6 +50,20 @@ public class Burger {
     }
 
 
+
+
+
+    public Burger(String name, String restaurant, Integer rating, String notes) {
+        this.name = name;
+        this.restaurant = restaurant;
+        this.rating = rating;
+        this.notes = notes;
+    }
+
+
+
+
+
     public Long getId() {
         return this.id;
     }
@@ -63,6 +79,16 @@ public class Burger {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public String getRestaurant() {
+        return this.restaurant;
+    }
+
+    public void setRestaurant(String restaurant) {
+        this.restaurant = restaurant;
+    }
+
 
     public Integer getRating() {
         return this.rating;

@@ -31,3 +31,7 @@
 - [ ] In your render route, retrieve all the records from the database and render them on the page and test.
 
 - [ ] Finally, be sure to handle validations in your POST method. If the user has any errors, you'll need to render the page again. But remember, you may need to send in some data here as well!
+
+## Review
+
+- [Adding a create form](https://login.codingdojo.com/m/315/9533/64304)
