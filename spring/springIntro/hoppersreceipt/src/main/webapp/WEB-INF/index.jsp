@@ -8,14 +8,24 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- for Bootstrap CSS -->
+        <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
+        <!-- YOUR own local CSS -->
+        <link rel="stylesheet" href="/css/main.css"/>
+        <!-- For any Bootstrap that uses JS or jQuery-->
+        <script src="/webjars/jquery/jquery.min.js"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
         <meta charset="UTF-8">
         <title>Hopper's Reciept</title>
     </head>
 <body>
-    <h1><c:out value="${name}"/></h1>
-    <p>Item name: <c:out value="${itemName}"/></p>
-    <p>Price: $<c:out value="${price}"/></p>
-    <p>Description: <c:out value="${description}"/></p>
-    <p>Vendor: <c:out value="${vendor}"></c:out></p>
+    <div class="container">
+        <img src="/images/grace.jpeg" alt="">
+        <h1><c:out value="${name}"/></h1>
+        <p>Item name: <c:out value="${itemName}"/></p>
+        <p>Price: $<c:out value="${price}"/></p>
+        <p>Description: <c:out value="${description}"/></p>
+        <p>Vendor: <c:out value="${vendor}"></c:out></p>
+    </div>
 </body>
 </html>
