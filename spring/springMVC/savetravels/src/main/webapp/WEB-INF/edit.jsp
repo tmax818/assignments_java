@@ -21,42 +21,12 @@
 <body>
 
     <h1>Save Travels</h1>
-    <table class="table">
-        <thead>
-            <th>Expense</th>
-            <th>vendor</th>
-            <th>amount</th>
-            <th>edit</th>
-            <th>delete</th>
-        </thead>
-        <tbody>
-            <c:forEach var="travel" items="${travels}">
-                <tr>
-                    <td>
-                        <a href="/travels/${travel.id}">
-                            ${travel.name}</td>
-                        </a>
-                    <td>${travel.vendor}</td>
-                    <td>${travel.amount}</td>
-                    <td>
-                        <a href="/travels/${travel.id}/edit">edit</a>
-                    </td>
-                    <td>
-                        <form action="/travels/${travel.id}" method="post">
-                            <input type="hidden" name="_method" value="delete">
-                            <input type="submit" value="Delete">
-                        </form>      
-                    </td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
    
 
-    <h2>Add a Travel Expense</h2>
+    <h2>Edit a Travel Expense</h2>
 
-    <form:form action="/travels" method="post" modelAttribute="travel">
-
+    <form:form action="/travels/${travel.id}" method="post" modelAttribute="travel">
+        <input type="hidden" name="_method" value="put">
     <div class="form-control">
         <form:label path="name">name</form:label>
         <from:errors path="name"/>

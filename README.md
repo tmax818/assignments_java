@@ -50,7 +50,7 @@
 - [ ] [All Books](spring/springMVC/allbooks/README.md)
 - [ ] [Burger Tracker 1](spring/springMVC/burgertrackerone/README.md)
 - [ ] [Burger Tracker 2](spring/springMVC/burgertrackertwo/README.md)
-- [ ] [Save Travels]()
+- [ ] [Save Travels](spring/springMVC/savetravels/README.md)
 
 ### Adding One-to-Many
 
@@ -60,3 +60,23 @@
 
 - [ ] [Login & Registration]()
 - [ ] [Book Club]()
+
+
+### Core Assignments
+
+- [ ] [Cafe Business Logic](fundamentals/cafeBusinessLogic/README.md)
+- [ ] [BankAccount](oop/oopBasic/bankAccount/README.md)
+- [ ] [Zookeeper](oop/oopAdvanced/zookeeper/README.md)
+- [ ] [CareSoft Interfaces](oop/oopAdvanced/careSoftInterfaces/README.md)
+- [ ] [Daikichi Path Variables](spring/springIntro/daikichipathvariables/README.md)
+- [ ] [Fruity Loops](spring/springIntro/fruityloops/README.md)
+- [ ] [Omikuji Form](spring/springIntro/omikujiform/README.md)
+- [ ] [Save Travels](spring/springMVC/savetravels/README.md)
+- [ ] [Dojos and Ninjas]()
+- [ ] [Login & Registration]()
+- [ ] [Book Club]()
+
+
+
+
+
