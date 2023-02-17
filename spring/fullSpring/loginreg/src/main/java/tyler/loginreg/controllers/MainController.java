@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,9 +38,40 @@ public class MainController {
             return "index.jsp";
         }
         session.setAttribute("userId", user.getId());
-        return "redirect:/";
+        return "redirect:/welcome";
     }
 
     @PostMapping("/login")
-    public String login(@Valid @ModelAttribute("newLogin")LoginUser loginUser)
+    public String login(@Valid @ModelAttribute("newLogin")LoginUser loginUser, BindingResult result, Model model, HttpSession session){
+        // login a new user via service
+        User userToLogin = userService.login(loginUser, result);
+        if(result.hasErrors() || userToLogin==null){
+            model.addAttribute("login", new User());
+            return "index.jsp";
+        }
+        session.setAttribute("userId", userToLogin.getId());
+        return "redirect:/welcome";
+    }
+
+    @GetMapping("/welcome")
+    public String welcome(HttpSession session, Model model) {
+        // If no userId is found, redirect to log out
+        if(session.getAttribute("userId") == null){
+            return "redirect:/logout";
+        }
+        // We get the userId from session and cast as Long
+        Long userId = (Long) session.getAttribute("userId");
+        // add user retrieved via the service to our model
+        model.addAttribute("user", userService.findById(userId));
+        return "welcome.jsp";
+
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        // Set userId to null
+        session.setAttribute("userId", null);
+        // redirect to log in/register page
+        return "redirect:/";
+    }
 }
