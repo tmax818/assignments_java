@@ -21,6 +21,7 @@ public class UserService {
         if(user.isPresent()){
             result.rejectValue("email", "Email", "Already have that email");
         }
+        // Check to see if password and confirm do NOT match
         if(!newUser.getPassword().equals(newUser.getConfirm())){
             result.rejectValue("confirm", "Confirm", "passwords must match");
             
@@ -40,29 +41,36 @@ public class UserService {
     public User login(LoginUser loginUser, BindingResult result){
         // Create potential user
         // Find user in the DB by email
-        Optional<User> userToLogin = userRepository.findByEmail(loginUser.getEmail());
-        // Reject if NOT present
-        if(!userToLogin.isPresent()){
-            result.rejectValue("email", "NoUser", "User not Found");
+        if(!this.checkEmail(loginUser.getEmail())){
+            result.rejectValue("email", "noEmail", "Invalid Credentials");
         }
-        // User exists if you get to this line, so retrieve user from DB
-        User user = userToLogin.get();
-        // Reject if BCrypt password match fails
-        if(!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())){
-            result.rejectValue("password", "Password", "Invalid Credentials");
-        }
-        // Return null if result has errors
         if(result.hasErrors()){
             return null;
         }
+        // Check to see if passwors match
+        User user = userRepository.findByEmail(loginUser.getEmail()).orElse(null);
+        if(!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())){
+            result.rejectValue("password", "password", "Invalid Credentials");
+        }
+        if(result.hasErrors()){
+            return null;
+        }
+        // User exists if you get to this line, so retrieve user from DB
+        // Reject if BCrypt password match fails
+
+        
+        // Return null if result has errors
         // Otherwise, return the user object
         return user;
     }
 
     public boolean checkEmail(String email){
         Optional<User> user = userRepository.findByEmail(email);
-        return user.isPresent();
-
+        if(user.isPresent()){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public Object findById(Long id) {
@@ -74,4 +82,3 @@ public class UserService {
     }
     
 }
-

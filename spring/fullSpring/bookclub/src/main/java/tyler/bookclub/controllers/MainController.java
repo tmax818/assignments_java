@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import tyler.bookclub.models.LoginUser;
 import tyler.bookclub.models.User;
@@ -20,37 +21,46 @@ public class MainController {
 
     @Autowired UserService userService;
     
-    @GetMapping("/")
-    public String index(
-        // @ModelAttribute("newUser")User user, 
-        // @ModelAttribute("newLogin")LoginUser loginUser,
-        Model model){
-        model.addAttribute("newUser", new User());
-        model.addAttribute("newLogin", new LoginUser());
+    @RequestMapping("/")
+    public String index(@ModelAttribute("newUser")User newUser,
+    @ModelAttribute("newLogin")LoginUser loginUser
+    ){
+        // Bind empty User and LoginUser objects to the JSP
+        // to capture the form input
         return "index.jsp";
     }
 
     @PostMapping("/register")
-    public String register(@Valid @ModelAttribute("newUser")User newUser, BindingResult result, Model model, HttpSession session){
+    public String register(
+        @Valid 
+        @ModelAttribute("newUser")User newUser, 
+        BindingResult result, 
+        Model model, 
+        HttpSession session){
         User user = userService.register(newUser, result);
+        if(result.hasErrors()){
+            model.addAttribute("newLogin", new LoginUser());
+            return "index.jsp";
+        }
+        session.setAttribute("userId", user.getId());
+        return "redirect:/books";
+    }
+
+    @PostMapping("/login")
+    public String login(
+        @Valid 
+        @ModelAttribute("newLogin")LoginUser newLogin, 
+        BindingResult result, 
+        Model model,
+         HttpSession session){
+        // login a new user via service
+        User userToLogin = userService.login(newLogin, result);
         if(result.hasErrors()){
             model.addAttribute("newUser", new User());
             return "index.jsp";
         }
-        session.setAttribute("userId", user.getId());
-        return "redirect:/welcome";
-    }
-    
-    @PostMapping("/login")
-    public String login(@Valid @ModelAttribute("newLogin")LoginUser newLogin, BindingResult result, Model model, HttpSession session){
-        // login a new user via service
-        User userToLogin = userService.login(newLogin, result);
-        if(result.hasErrors()){
-            model.addAttribute("newLogin", new User());
-            return "index.jsp";
-        }
         session.setAttribute("userId", userToLogin.getId());
-        return "redirect:/welcome";
+        return "redirect:/books";
     }
 
     @GetMapping("/welcome")

@@ -143,6 +143,7 @@ spring.mvc.hiddenmethod.filter.enabled=true
 ## Controllers
 
 - [ ] add [MainController](src/main/java/tyler/bookclub/controllers/MainController.java)
+- [ ] add [BookController](src/main/java/tyler/bookclub/controllers/BookController.java)
 
 ## Services
 
