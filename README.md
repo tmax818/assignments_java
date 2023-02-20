@@ -54,11 +54,11 @@
 
 ### Adding One-to-Many
 
-- [ ] [Dojos and Ninjas]()
+- [ ] [Dojos and Ninjas](spring/oneToMany/dojoandninjas/README.md)
 
 ### Full Spring 
 
-- [ ] [Login & Registration]()
+- [ ] [Login & Registration](spring/fullSpring/loginreg/README.md)
 - [ ] [Book Club]()
 
 

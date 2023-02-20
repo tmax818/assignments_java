@@ -1,4 +1,4 @@
-package tyler.loginreg.services;
+package tyler.bookclub.services;
 
 import java.util.Optional;
 
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import tyler.loginreg.models.LoginUser;
-import tyler.loginreg.models.User;
-import tyler.loginreg.repositories.UserRepository;
+import tyler.bookclub.models.LoginUser;
+import tyler.bookclub.models.User;
+import tyler.bookclub.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -21,7 +21,6 @@ public class UserService {
         if(user.isPresent()){
             result.rejectValue("email", "Email", "Already have that email");
         }
-        // Check to see if password and confirm do NOT match
         if(!newUser.getPassword().equals(newUser.getConfirm())){
             result.rejectValue("confirm", "Confirm", "passwords must match");
             
@@ -41,36 +40,29 @@ public class UserService {
     public User login(LoginUser loginUser, BindingResult result){
         // Create potential user
         // Find user in the DB by email
-        if(!this.checkEmail(loginUser.getEmail())){
-            result.rejectValue("email", "noEmail", "Invalid Credentials");
-        }
-        if(result.hasErrors()){
-            return null;
-        }
-        // Check to see if passwors match
-        User user = userRepository.findByEmail(loginUser.getEmail()).orElse(null);
-        if(!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())){
-            result.rejectValue("password", "password", "Invalid Credentials");
-        }
-        if(result.hasErrors()){
-            return null;
+        Optional<User> userToLogin = userRepository.findByEmail(loginUser.getEmail());
+        // Reject if NOT present
+        if(!userToLogin.isPresent()){
+            result.rejectValue("email", "NoUser", "User not Found");
         }
         // User exists if you get to this line, so retrieve user from DB
+        User user = userToLogin.get();
         // Reject if BCrypt password match fails
-
-        
+        if(!BCrypt.checkpw(loginUser.getPassword(), user.getPassword())){
+            result.rejectValue("password", "Password", "Invalid Credentials");
+        }
         // Return null if result has errors
+        if(result.hasErrors()){
+            return null;
+        }
         // Otherwise, return the user object
         return user;
     }
 
     public boolean checkEmail(String email){
         Optional<User> user = userRepository.findByEmail(email);
-        if(user.isPresent()){
-            return true;
-        } else {
-            return false;
-        }
+        return user.isPresent();
+
     }
 
     public Object findById(Long id) {
@@ -82,3 +74,4 @@ public class UserService {
     }
     
 }
+

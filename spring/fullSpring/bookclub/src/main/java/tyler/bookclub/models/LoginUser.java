@@ -1,10 +1,8 @@
-package tyler.loginreg.models;
+package tyler.bookclub.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-
-
 
 public class LoginUser {
 
@@ -19,10 +17,10 @@ public class LoginUser {
     public LoginUser() {}
 
 
-    public LoginUser(String email, String password) {
-        this.email = email;
-        this.password = password;
-    }
+    // public LoginUser(String email, String password) {
+    //     this.email = email;
+    //     this.password = password;
+    // }
     
     public String getEmail() {
         return this.email;
@@ -39,6 +37,5 @@ public class LoginUser {
     public void setPassword(String password) {
         this.password = password;
     }
-
     
 }
