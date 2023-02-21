@@ -31,20 +31,20 @@
             <th>Added By</th>
         </thead>
         <tbody>
-            <c:forEach var="book" items="${books}">
+
                 <tr>
-                    <td>
-                        <a href="/books/${book.id}">
-                        ${book.title}</a></td>
+                    <td>${book.title}</td>
                     <td>${book.author}</td>
                     <td>${book.user.userName}</td>
 
                 </tr>
-            </c:forEach>
+
         </tbody>
     </table>
+    <c:if test="${userId == book.user.id}">
 
-    <a class="btn btn-primary" href="/books/new">Add a Book</a>
+        <a class="btn btn-primary" href="/books/new">Add a Book</a>
+    </c:if>
 </div>
 </body>
 </html>

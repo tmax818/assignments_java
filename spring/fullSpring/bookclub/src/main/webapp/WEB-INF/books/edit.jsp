@@ -21,30 +21,29 @@
     <title>Document</title>
 </head>
 <body>
-    ${books}
 <div class="container">
-    <h1>All books</h1>
-    <table class="table">
-        <thead>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Added By</th>
-        </thead>
-        <tbody>
-            <c:forEach var="book" items="${books}">
-                <tr>
-                    <td>
-                        <a href="/books/${book.id}">
-                        ${book.title}</a></td>
-                    <td>${book.author}</td>
-                    <td>${book.user.userName}</td>
+    <h1>New book</h1>
 
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
 
-    <a class="btn btn-primary" href="/books/new">Add a Book</a>
+    <form:form action="/books" method="post" modelAttribute="book">
+        <form:hidden path="user" value="${userId}"></form:hidden>
+    <div class="form-control">
+        <form:label path="title">Title</form:label>
+        <form:errors path="title"></form:errors>
+        <form:input path="title"></form:input>
+    </div>
+    <div class="form-control">
+        <form:label path="author">author</form:label>
+        <form:errors path="author"></form:errors>
+        <form:input path="author"></form:input>
+    </div>
+    <div class="form-control">
+        <form:label path="myThoughts">myThoughts</form:label>
+        <form:errors path="myThoughts"></form:errors>
+        <form:input path="myThoughts"></form:input>
+    </div>
+    <input type="submit" value="add book">
+    </form:form>
 </div>
 </body>
 </html>

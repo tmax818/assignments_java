@@ -3,9 +3,12 @@ package tyler.bookclub.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,8 +30,12 @@ public class BookController {
     }
 
     @PostMapping("/books")
-    public String createBook(@ModelAttribute("book")Book book){
-        bookService.addBook(book);
+    public String createBook(@Valid @ModelAttribute("book")Book book, BindingResult results){
+        if(results.hasErrors()){
+            return "books/new.jsp";
+        } else {
+            bookService.addBook(book);
+        }
         return "redirect:/books";
     }
 
@@ -46,5 +53,7 @@ public class BookController {
     @GetMapping("/books/{id}")
     public String show(@PathVariable("id")Long id, Model model){
         Book book = bookService.getOne(id);
+        model.addAttribute("book", book);
+        return "books/show.jsp";
     }
 }
