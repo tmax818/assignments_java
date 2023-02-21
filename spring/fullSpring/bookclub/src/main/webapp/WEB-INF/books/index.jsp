@@ -21,8 +21,26 @@
     <title>Document</title>
 </head>
 <body>
+    ${books}
 <div class="container">
     <h1>All books</h1>
+    <table class="table">
+        <thead>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Added By</th>
+        </thead>
+        <tbody>
+            <c:forEach var="book" items="${books}">
+                <tr>
+                    <td>${book.title}</td>
+                    <td>${book.author}</td>
+                    <td>${book.user.userName}</td>
+
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
 
     <a class="btn btn-primary" href="/books/new">Add a Book</a>
 </div>

@@ -26,8 +26,23 @@
 
 
     <form:form action="/books" method="post" modelAttribute="book">
-
-    <input type="submit" value="">
+        <form:hidden path="user" value="${userId}"></form:hidden>
+    <div class="form-control">
+        <form:label path="title">Title</form:label>
+        <form:errors path="title"></form:errors>
+        <form:input path="title"></form:input>
+    </div>
+    <div class="form-control">
+        <form:label path="author">author</form:label>
+        <form:errors path="author"></form:errors>
+        <form:input path="author"></form:input>
+    </div>
+    <div class="form-control">
+        <form:label path="myThoughts">myThoughts</form:label>
+        <form:errors path="myThoughts"></form:errors>
+        <form:input path="myThoughts"></form:input>
+    </div>
+    <input type="submit" value="add book">
     </form:form>
 </div>
 </body>

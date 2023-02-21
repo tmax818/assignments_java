@@ -26,7 +26,7 @@ public class Book {
 
     private String author;
 
-    private String myThougts;
+    private String myThoughts;
 
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -42,15 +42,17 @@ public class Book {
     public Book() {
     }
 
-    public Book(Long id, String title, String author, String myThougts, Date createdAt, Date updatedAt, User user) {
+
+    public Book(Long id, String title, String author, String myThoughts, Date createdAt, Date updatedAt, User user) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.myThougts = myThougts;
+        this.myThoughts = myThoughts;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.user = user;
     }
+
 
     public Long getId() {
         return this.id;
@@ -76,12 +78,12 @@ public class Book {
         this.author = author;
     }
 
-    public String getMyThougts() {
-        return this.myThougts;
+    public String getMyThoughts() {
+        return this.myThoughts;
     }
 
-    public void setMyThougts(String myThougts) {
-        this.myThougts = myThougts;
+    public void setMyThoughts(String myThoughts) {
+        this.myThoughts = myThoughts;
     }
 
     public Date getCreatedAt() {
@@ -107,6 +109,10 @@ public class Book {
     public void setUser(User user) {
         this.user = user;
     }
+    
+
+
+
 
 
 
