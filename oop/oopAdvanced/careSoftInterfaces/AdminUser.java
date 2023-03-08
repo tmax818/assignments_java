@@ -8,7 +8,7 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
     // Inside class:
     private Integer employeeID;
     private String role;
-    private ArrayList<String> securityIncidents;
+    private ArrayList<String> securityIncidents = new ArrayList<>();
     
     // TO DO: Implement a constructor that takes an ID and a role
 
@@ -44,13 +44,15 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
     }
     @Override
     public boolean assignPin(int pin) {
-        // TODO Auto-generated method stub
-        return false;
+        int numDigits = String.valueOf(pin).length();
+        return(numDigits >= 6);
     }
     @Override
     public boolean accessAuthorized(Integer confirmedAuthID) {
-        // TODO Auto-generated method stub
-        return false;
+        if(confirmedAuthID.equals(this.id)){
+            this.authIncident();
+        }
+        return(confirmedAuthID == this.id);
     }
     
     // TO DO: Setters & Getters
