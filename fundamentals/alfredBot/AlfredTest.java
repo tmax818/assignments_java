@@ -1,3 +1,5 @@
+package assignments_java.fundamentals.alfredBot;
+
 
 
 public class AlfredTest {

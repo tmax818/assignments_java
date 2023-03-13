@@ -10,6 +10,8 @@ public class TestCafe {
     */
     	
         /* ============ App Test Cases ============= */
+
+        CafeUtil appTest = new CafeUtil();
         
         System.out.println("\n----- Streak Goal Test -----");
         System.out.printf("Purchases needed by week 10: %s \n\n", appTest.getStreakGoal());
